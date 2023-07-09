@@ -61,4 +61,12 @@ public class OrdenCompra {
         }
         return toString();
     }
+
+    public int TotalCompra(){
+        int total=0;
+        for (Producto pd: productos) {
+            total += pd.getPrecio();
+        }
+        return total;
+    }
 }
