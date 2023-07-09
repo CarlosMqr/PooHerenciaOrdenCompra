@@ -15,6 +15,7 @@ public class OrdenCompra {
     public OrdenCompra(String descripcion){
         this.descripcion = descripcion;
         idCompra += idCompraU;// se asigna id a cada compra y se autoincrementa cuando se crea otra ordenCompra
+        this.productos = new Producto[4];
     }
     /////// GETTER AND SETTER ///////
     public int getIdCompra(){
@@ -39,4 +40,10 @@ public class OrdenCompra {
         return this.productos;
     }
     ////// METODOS /////////////////
+    public void addProducto(Producto producto){
+        if (indiceProductos < this.productos.length){
+            this.productos[indiceProductos++] = producto;
+            //this.productos = new Producto[4];
+        }
+    }
 }
