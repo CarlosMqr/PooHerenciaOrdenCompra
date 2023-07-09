@@ -46,4 +46,19 @@ public class OrdenCompra {
             //this.productos = new Producto[4];
         }
     }
+
+    public String detalle(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("         Abarrotes Jazmin      ");
+        sb.append("IdCompra: " + this.getIdCompra());
+        sb.append("Orden de la compra: " + this.getCliente());
+        sb.append("Fecha: " + this.getFecha());
+        sb.append("descripción de compra: " + this.getDescripcion());
+        if (this.getProductos() != null){
+            for (Producto p : productos) {
+                sb.append("\nFabricante: " + p.getFabricante() + ";\n Producto: " + p.getNombre() + ";\n Precio: " + p.getPrecio());
+            }
+        }
+        return toString();
+    }
 }
