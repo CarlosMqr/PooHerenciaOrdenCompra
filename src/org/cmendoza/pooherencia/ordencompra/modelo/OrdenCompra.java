@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class OrdenCompra {
     private int idCompra;
-    private int idCompraU;
+    private static int idCompraU;// tiene que ser estatico
     private String descripcion;
     private Date fecha;
     private Cliente cliente;// un tipo Cliente que viene de la clase Cliente
@@ -14,11 +14,11 @@ public class OrdenCompra {
     //////// CONSTRUCTOR /////////////
     public OrdenCompra(String descripcion){
         this.descripcion = descripcion;
-        idCompra += idCompraU;// se asigna id a cada compra y se autoincrementa cuando se crea otra ordenCompra
+        this.idCompra = ++ idCompraU;// se asigna id a cada compra y se autoincrementa cuando se crea otra ordenCompra
         this.productos = new Producto[4];
     }
     /////// GETTER AND SETTER ///////
-    public int getIdCompra(){
+    public Integer getIdCompra(){
         return this.idCompra;
     }
     public String getDescripcion(){
