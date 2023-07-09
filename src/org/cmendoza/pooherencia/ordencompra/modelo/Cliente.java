@@ -17,4 +17,9 @@ public class Cliente {
         return this.apellido;
     }
     ////// METODOS /////////////////
+
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }
